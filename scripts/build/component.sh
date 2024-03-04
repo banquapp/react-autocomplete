@@ -14,9 +14,7 @@ browserify ../lib/Autocomplete.js \
     --dependency react-dom:ReactDOM \
   | exorcist react-autocomplete.js.map \
   > react-autocomplete.js
-uglifyjs react-autocomplete.js \
+uglifyjs react-autocomplete.js -cmo react-autocomplete.min.js \
     --compress \
     --mangle \
-    --in-source-map react-autocomplete.js.map \
-    --source-map react-autocomplete.min.js.map \
-  > react-autocomplete.min.js
+    --source-map url=react-autocomplete.min.js.map
